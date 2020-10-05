@@ -1,1 +1,1 @@
-# cleas-R
+# class-R

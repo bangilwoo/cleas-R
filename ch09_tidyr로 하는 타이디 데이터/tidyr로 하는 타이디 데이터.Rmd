@@ -7,7 +7,7 @@ output:
    toc_float : true
    toc_depth : 3
 ---
-
+Tidy data in tidyr
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```

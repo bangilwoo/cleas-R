@@ -233,12 +233,18 @@ title: "Shiny Web App"
 output: html_document
 runtime: shiny
 ```  
-
+getwd()
 - `입력` 함수를 이용하여 문서에 대화형 구성요소 추가 가능 
 
 install.packages("shiny")
 
-```{} 
+install.packages("shiny", dependencies = TRUE, INSTALL_opts = '--no-lock')
+
+unlink('C:/Users/bangi/Documents/R/win-librar/4.0/00LOCK', recursive = TRUE)
+
+file:‘C:\Program Files\R\R-3.6.1\library/00LOCK’, delete the file"00LOCK" 
+
+```{r message = FALSE} 
 library(shiny)
 
 textInput("name", "이름은 무엇입니까?") # Rmd에서 실행 시, 한글 깨질 수 있는데 knit하면 제대로 출력됨

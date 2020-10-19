@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 
 ```
-
-   
+ 
+    
 https://gomguard.tistory.com/243
 파이프의 종류 4가지
 ```

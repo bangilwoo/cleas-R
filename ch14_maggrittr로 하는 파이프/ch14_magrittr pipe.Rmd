@@ -1,13 +1,13 @@
 ---
 title: "ch14_magrittr pipe"
 author: "bangilwoo"
-date: '2020 10 19 '
+date: '2020 10 20 '
 output:
    html_document:
     toc: true
     toc_float: true
 ---
-
+ 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```

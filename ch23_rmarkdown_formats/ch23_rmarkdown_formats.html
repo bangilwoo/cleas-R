@@ -5594,8 +5594,8 @@ leaflet() %&gt;%
   setView(174.764, -36.877, zoom = 16) %&gt;%
   addTiles() %&gt;%
   addMarkers(174.764, -36.877, popup = &quot;Maungawhau&quot;)</code></pre>
-<div id="htmlwidget-9e211614fee5f12879a7" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9e211614fee5f12879a7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-36.877,174.764],16,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-36.877,174.764,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Maungawhau",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.877,-36.877],"lng":[174.764,174.764]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-faf3c9787eb53757a779" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-faf3c9787eb53757a779">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-36.877,174.764],16,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-36.877,174.764,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Maungawhau",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.877,-36.877],"lng":[174.764,174.764]}},"evals":[],"jsHooks":[]}</script>
 <p>html 위젯은 HTML이나 자바스크립트를 몰라도 사용할 수 있음</p>
 <ul>
 <li><strong>추가</strong> html 위젯을 제공하는 패키지(중 일부)</li>
@@ -5618,15 +5618,23 @@ leaflet() %&gt;%
 <pre><code>title: &quot;Shiny Web App&quot;
 output: html_document
 runtime: shiny</code></pre>
-<ul>
-<li><code>입력</code> 함수를 이용하여 문서에 대화형 구성요소 추가 가능</li>
-</ul>
+<p>getwd() - <code>입력</code> 함수를 이용하여 문서에 대화형 구성요소 추가 가능</p>
 <p>install.packages(“shiny”)</p>
-<pre><code>library(shiny)
+<p>install.packages(“shiny”, dependencies = TRUE, INSTALL_opts = ‘–no-lock’)</p>
+<p>unlink(‘C:/Users/bangi/Documents/R/win-librar/4.0/00LOCK’, recursive = TRUE)</p>
+<p><a href="file:‘C:\Program" class="uri">file:‘C:\Program</a> Files-3.6.1/00LOCK’, delete the file“00LOCK”</p>
+<pre class="r"><code>library(shiny)
 
-textInput(&quot;name&quot;, &quot;이름은 무엇입니까?&quot;) # Rmd에서 실행 시, 한글 깨질 수 있는데 knit하면 제대로 출력됨
-numericInput(&quot;age&quot;, &quot;나이는 몇 살입니까?&quot;, NA, min = 0, max = 150)</code></pre>
-<p><code>input$name</code>과 <code>imput$age</code>로 값을 참조할 수 있고, 이 값을 사용하는 코드는 값이 변경될 때마다 자동으로 다시 실행됨</p>
+textInput(&quot;name&quot;, &quot;이름은 무엇입니까?&quot;) # Rmd에서 실행 시, 한글 깨질 수 있는데 knit하면 제대로 출력됨</code></pre>
+<div class="form-group shiny-input-container">
+<label class="control-label" for="name">이름은 무엇입니까?</label>
+<input id="name" type="text" class="form-control" value=""/>
+</div>
+<pre class="r"><code>numericInput(&quot;age&quot;, &quot;나이는 몇 살입니까?&quot;, NA, min = 0, max = 150)</code></pre>
+<p><div class="form-group shiny-input-container">
+<label class="control-label" for="age">나이는 몇 살입니까?</label>
+<input id="age" type="number" class="form-control" value="NA" min="0" max="150"/>
+</div> <code>input$name</code>과 <code>imput$age</code>로 값을 참조할 수 있고, 이 값을 사용하는 코드는 값이 변경될 때마다 자동으로 다시 실행됨</p>
 <ul>
 <li><strong>추가</strong> Shiny 대화형 기능은 서버측에서 작동하기 때문에 앱을 여기서는 보여줄 수 없음<br />
 자바스크립트를 몰라도 대화형 앱을 작성할 수는 있지만, 실행하기 위해서는 서버가 필요하다는 수송 문제가 있음<br />

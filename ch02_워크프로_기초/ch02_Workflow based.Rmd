@@ -1,0 +1,137 @@
+---
+title: "ch02_workflow based"
+author: "bangilwoo"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 2.1 코딩 기초
+
+ R은 계산기로 사용할 수 있다.
+ 
+```{r}
+1 / 200 * 30
+
+(59 + 73 + 2) / 3
+
+sin(pi / 2)
+```
+  
+ **<span style="color: red;"><-</span>** 를 사용하면 객체가 생성된다.
+ 
+```{r}
+x <- 3*4
+```
+
+- " = " 기호 사용하지 말 것
+- " <- " 기호를 사용할 것 
+  **(<span style="color: red;">단축키: Alt + -</span>)**
+- 코드를 볼 때 혼잡함을 방지하기 위해 공백을 꼭 사용하자!
+  
+## 2.2 이름에 들어갈 것
+
+ 객체의 이름은 문자로 시작해야만 하고 <span style="color: red;">문자, 숫자, _, .</span> 만을 포함해야 한다.
+객체 이름이 설명력이 있으면 좋으므로 여러 단어를 이어쓸 때의 규칙이 필요하다. 소문자 단어들을 <span style="color: red;">_</span> 로 구분하는 snake_case를 사용하는 것을 추천한다.
+ 
+```r
+i_use_snake_case
+otherPeopleUseCamelCase
+some.people.use.periods
+And_aFew.People_RENOUNCEconvention
+```
+
+객체를 확인하려면 이름을 타이핑하면 된다.
+
+```{r}
+x
+```
+
+객체 확인을 위해 Rstudio의 완성 기능을 사용해보자.
+
+```{r}
+this_is_a_really_long_name <- 2.5
+```
+
+![RStudio완성기능](image./RStudio.jpg)
+
+명령어를 수정해야할 경우, <span style="color: red;">Cmd/Ctrl + ↑</span> 를 사용하면 명령어 중 그 문자로 시작 하는 것들을 보여준다.
+ 
+또 다른 할당문을 만들어보자.
+
+```{r}
+r_rocks <- 2 ^ 3
+```
+
+```r
+r_rock
+#> Error: object 'r_rock' not found
+R_rocks
+#> Error: object 'R_rocks' not found
+```
+
+R에서는 명령문을 정확하게 입력 해야한다. 대소문자를 정확하게 구분해야 한다.
+  
+## 2.3 함수 호출하기
+
+R은 다음과 같이 호출되는 내장 함수가 많이 있다.
+
+function_name(arg1 = val1, arg2 = val2, ...)
+
+기능에 대한 이름(수식 아님)
+
+숫자 시퀸스를 만드는 seq()를 이용해보자.
+
+![](image./seq.jpg)
+
+    - 팝업되는 툴팁은 해당함수의 인수와 목적을 알려준다.
+    - 도움이 더 필요하면 F1 키를 눌러서 하단 오른쪽 창의 Help 탭에 있는 세부내용을 참고하자.  
+    
+화살표로 원하는 함수를 선택했을 때 <span style="color: red;">Tab</span>을 누르면 여는 괄호( 와 닫는 괄호) 한 쌍이 생성된다.
+![](image./make_seq.jpg)
+  
+1, 10을 타이핑 하고 실행해보자. 
+
+```{r}
+seq(1, 10)
+```
+  
+짝을 이루는 따옴표로 비슷한 도움을 받아보자.
+
+```{r}
+x <- "hello world"
+```
+
+    - 따옴표와 괄호는 항상 짝을 이루어야 한다.
+
+```r
+> x <- "hello
++
+```
+
+" 또는 )를 누락한 경우, 입력이 완료되자 않았다고 인식되어 +표시가 뜬다.
+  
+할당문을 완성했다고 값을 바로 볼 수는 없다. 명령어를 입력해야 값을 볼 수 있다.
+
+```{r}
+y <- seq(1, 10, length.out = 5)
+y
+```
+  
+일반적인 작업은 항당문을 괄호로 묶어 단축할 수 있다. 아래와 같이 하면 할당이 되고 '스크린에 인쇄'가 된다.
+
+```{r}
+(y <- seq(1, 10, length.out = 5))
+```
+  
+- 상단 오른쪽 창의 Enviroment에서 생성한 객체를 모두 볼 수 있다.
+![](image./enviroment.png)
+   
+

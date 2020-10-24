@@ -1,5 +1,5 @@
 ---
-title: "Data visualisation"
+title: "데이터 시각화"
 author: "Bangilwoo"
 output:
   html_document:

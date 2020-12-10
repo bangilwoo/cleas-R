@@ -6,7 +6,7 @@ github 연동
  
 2. git commit -m"1st commit"
  
-3. git config --global user.email "bangilwoo1@naver.com"
+3. git config --global user.email "bangilwoo1@naver.com"<br>
    git config --global user.name "bangilwoo"
    
    처음 사용할 때만 입력
